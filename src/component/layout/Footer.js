@@ -1,15 +1,18 @@
 import React, {Component, PropTypes} from 'react'
+import { Layout, Menu, Breadcrumb } from 'antd';
+const { Header, Content, Footer } = Layout;
 
-class Footer extends Component {
+class FooterLayout extends Component {
     render() {
         const {} = this.props;
         return (
             <div className="layout-footer">
-                <span>Copyright © 2017-2018 sogou.com Inc. </span>
-                <span>All Rights Reserved. Supported by bizdev_cpcfe</span>
+                <Footer style={{ textAlign: 'center' }}>
+                ©2017 Created by XIONGSHENG
+                </Footer>
             </div>
         )
     }
 }
 
-export default Footer
+export default FooterLayout

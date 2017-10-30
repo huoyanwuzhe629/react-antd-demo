@@ -1,13 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router-dom';
-import {Menu, Dropdown, Icon, Row, Col} from 'antd';
+import { Layout, Menu, Breadcrumb, Dropdown, Icon} from 'antd';
 import axios from 'axios';
+
+const { Header, Content, Footer } = Layout;
 
 const LOGIN_URL = '/login/queryLoginUser.do',
     LOGOUT_URL = 'http://bizwork.sogou-inc.com/logout';
 
 
-class Header extends Component {
+class HeaderLayout extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,36 +45,32 @@ class Header extends Component {
                 authManage: '5',
             },
             path = 'advanced';
+
         return (
-             <div className="header">
-                <div className="header-wrapper">
-                    <Row>
-                        <Col xs={24} sm={24} md={4} lg={6}>
-                            <div className="logo"></div>
-                            <div className="title"><span>统一部署服务</span></div>
-                        </Col>
-                        <Col xs={0} sm={0} md={20} lg={18}>
-                            <div className="login">
-                                <Dropdown overlay={menu}>
-                                    <a className="login-name" href="javascript:;">
-                                    {userName}<Icon type="down" />
-                                    </a>
-                                </Dropdown>
-                            </div>
-                            <Menu theme="dark" mode="horizontal"
-                            defaultSelectedKeys={[menuMap[path]]} style={{lineHeight: '64px'}}>
-                                <Menu.Item key="2"><Link to="advanced" >高级功能</Link></Menu.Item>
-                                <Menu.Item key="4"><Link to="message" >消息提醒</Link></Menu.Item>
-                                <Menu.Item key="5"><Link to="authManage" >权限管理</Link></Menu.Item>
-                            </Menu>
-                        </Col>
-                    </Row>
-
-
-                </div>
+            <div className="header">
+                <Header>
+                    <div className="logo" />
+                    <div className="login">
+                        <Dropdown overlay={menu} >
+                            <a className="login-name" href="javascript:;">
+                            {userName}<Icon type="down" />
+                            </a>
+                        </Dropdown>
+                    </div>
+                    <Menu
+                        theme="dark"
+                        mode="horizontal"
+                        defaultSelectedKeys={['2']}
+                        style={{ lineHeight: '64px' }}
+                    >
+                        <Menu.Item key="1"><Link to="advanced" >高级功能</Link></Menu.Item>
+                        <Menu.Item key="2"><Link to="message" >消息提醒</Link></Menu.Item>
+                        <Menu.Item key="3"><Link to="authManage" >权限管理</Link></Menu.Item>
+                    </Menu>
+                </Header>
             </div>
         )
     }
 }
 
-export default Header
+export default HeaderLayout
