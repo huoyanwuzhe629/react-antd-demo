@@ -19,7 +19,9 @@ let unFePlugins = [
         chunks: ['app', 'vendor']
     }),
     new webpack.optimize.UglifyJsPlugin({
-        compress: false,
+        compress: {
+            warnings:false
+        },
         sourceMap: false
     })
 ];
