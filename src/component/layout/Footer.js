@@ -6,11 +6,9 @@ class FooterLayout extends Component {
     render() {
         const {} = this.props;
         return (
-            <div className="layout-footer">
-                <Footer style={{ textAlign: 'center' }}>
-                ©2017 Created by XIONGSHENG
-                </Footer>
-            </div>
+            <Footer className="layout-footer" style={{ textAlign: 'center' }}>
+            ©2017 Created by XIONGSHENG
+            </Footer>
         )
     }
 }
