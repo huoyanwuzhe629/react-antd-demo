@@ -8,9 +8,31 @@ let common = {
     rules: [
         {
             test: /\.(less|css)$/,
+            include: [resolve('src/component')],
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: ["css-loader", {
+                use: [
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true
+                        }
+                    }, {
+                    loader: 'postcss-loader',
+                    options: {
+                        ident: 'postcss',
+                        plugins: (loader) => [
+                            require('autoprefixer')(),
+                        ]
+                    }
+                }, "less-loader"]
+            })
+        }, {
+            test: /\.(less|css)$/,
+            exclude: [resolve('src/component')],
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [ 'css-loader', {
                     loader: 'postcss-loader',
                     options: {
                         ident: 'postcss',

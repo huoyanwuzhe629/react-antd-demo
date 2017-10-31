@@ -9,8 +9,8 @@ const { Header, Content, Footer } = Layout;
 class Main extends Component {
     render() {
         return (
-            <Content className="content-wrap" style={{ padding: '0 50px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
+            <Content className="content-wrap content-rwd" >
+                <Breadcrumb className="breadcrumb-rwd">
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>List</Breadcrumb.Item>
                     <Breadcrumb.Item>App</Breadcrumb.Item>

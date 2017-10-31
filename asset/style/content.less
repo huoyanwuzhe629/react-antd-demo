@@ -1,6 +1,21 @@
+@import 'variable';
+
 .content-wrap {
     flex: 1 0 auto; /* 2 */
     display: flex;
     flex-direction: column;
     background: #ececec;
+}
+
+.content-rwd {
+    padding: 0px;
+    @media screen and (min-width: @screen-sm-min){
+        padding: 0px 50px;
+    }
+}
+.breadcrumb-rwd {
+    margin: 1rem;
+    @media screen and (min-width: @screen-sm-min){
+        margin: 16px 0px;
+    }
 }

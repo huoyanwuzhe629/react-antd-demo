@@ -6,13 +6,15 @@
 */
 
 import React, {Component} from 'react';
+import styles from './index.less';
+import CSSModules from 'react-css-modules';
 
 class Advanced extends Component {
     render() {
         return (
-            <span>高级功能</span>
+            <span styleName='testSpan'>高级功能</span>
         );
     }
 }
 
-export default Advanced
+export default CSSModules(Advanced, styles);

@@ -1,3 +1,5 @@
+@import 'variable';
+
 .header {
     height: 64px;
     flex: none;
@@ -10,6 +12,15 @@
         margin: 1px 28px 2px 0;
         float: left;
     }
+    .title {
+        float: left;
+        color: #fff;
+        font-size: 20px;
+        line-height: 30px;
+        height: 30px;
+        margin-top:15px;
+        margin-right: 20px;
+    }
     .login {
         float: right;
         color: #fff;
@@ -21,4 +32,13 @@
             color: #fff;
         }
     }
+    .ant-menu {
+        font-size: 16px;
+    }
+    @media screen and (max-width: @screen-sm-min){
+        .ant-layout-header {
+            padding: 0px 1rem;
+        }
+    }
+    
 }
