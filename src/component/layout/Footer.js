@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd';
-const { Header, Content, Footer } = Layout;
+import { Layout, Icon } from 'antd';
+const {Footer } = Layout;
 
 class FooterLayout extends Component {
     render() {
         const {} = this.props;
         return (
-            <Footer className="layout-footer" style={{ textAlign: 'center' }}>
-            ©2017 Created by XIONGSHENG
+            <Footer style={{ textAlign: 'center' }}>
+                <Icon type="copyright" /><span style={{fontSize: '14px'}}> 2017 Created by bizdev-cpcfe</span>
             </Footer>
         )
     }

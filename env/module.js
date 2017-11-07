@@ -29,7 +29,7 @@ let common = {
                 }, "less-loader"]
             })
         }, {
-            test: /\.(less|css)$/,
+            test: /\.less$/,
             exclude: [resolve('src/component')],
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
@@ -42,6 +42,21 @@ let common = {
                         ]
                     }
                 }, "less-loader"]
+            })
+        },{
+            test: /\.css$/,
+            exclude: [resolve('src/component')],
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [ 'css-loader', {
+                    loader: 'postcss-loader',
+                    options: {
+                        ident: 'postcss',
+                        plugins: (loader) => [
+                            require('autoprefixer')(),
+                        ]
+                    }
+                }]
             })
         }, {
             test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,

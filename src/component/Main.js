@@ -1,26 +1,21 @@
 import React, {Component} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AuthManage from './content/AuthManage';
-import Advanced from './content/Advanced';
+import Home from './content/Home';
 import Message from './content/Message';
-import { Layout, Menu, Breadcrumb } from 'antd';
-const { Header, Content, Footer } = Layout;
+import { Layout} from 'antd';
+const {Content} = Layout;
 
 class Main extends Component {
     render() {
         return (
-            <Content className="content-wrap content-rwd" >
-                <Breadcrumb className="breadcrumb-rwd">
-                    <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>List</Breadcrumb.Item>
-                    <Breadcrumb.Item>App</Breadcrumb.Item>
-                </Breadcrumb>
-                <div className="content-wrap" style={{ background: '#fff', padding: 24}}>
-                    <Route path="/" exact component={Advanced} />
-                    <Route path="/authManage" component={AuthManage} />
-                    <Route path="/advanced" component={Advanced} />
-                    <Route path="/message" component={Message} />
-                </div>
+            <Content style={{ margin: '24px 24px 0', height: '100%' }} >
+                <Switch>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/authManage" component={AuthManage} />
+                  <Route path="/index" component={Home} />
+                  <Route path="/message" component={Message} />
+                </Switch>
             </Content>
         )
     }
