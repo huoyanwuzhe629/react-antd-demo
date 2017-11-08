@@ -9,7 +9,7 @@ const {Content} = Layout;
 class Main extends Component {
     render() {
         return (
-            <Content style={{ margin: '24px 24px 0', height: '100%' }} >
+            <Content style={{display:'flex'}}>
                 <Switch>
                   <Route path="/" exact component={Home} />
                   <Route path="/authManage" component={AuthManage} />

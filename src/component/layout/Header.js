@@ -89,7 +89,7 @@ class HeaderLayout extends Component {
                     {currentUser.name ? (
                         <Dropdown overlay={menu}>
                             <span className={`${styles['action']} ${styles['account']}`}>
-                                <Avatar size="small" className={styles['avatar']} src='/asset/img/user.jpg' />
+                                <Avatar size="small" className={styles['avatar']} src='http://puboa.sogou-inc.com/moa/sylla/mapi/img?id=xiongsheng&s=1' />
                                 {currentUser.name}
                             </span>
                         </Dropdown>

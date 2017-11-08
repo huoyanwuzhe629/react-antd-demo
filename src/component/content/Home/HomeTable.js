@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styles from './index.less';
 import CSSModules from 'react-css-modules';
-import {getColumns} from './column';
-import {Table, Button, Select} from 'antd';
-const Option = Select.Option;
+import { getColumns } from './column';
+import { Row, Col, Card, Form, Input, Select, Icon, Button, Dropdown, Table } from 'antd';
+const FormItem = Form.Item;
+const { Option } = Select;
 
 class HomeTable extends Component {
     render() {
@@ -30,25 +31,42 @@ class HomeTable extends Component {
             }
         ];
         return (
-            <div>
-                <div className={styles['option-wrap']}>
-                    <div>
-                        <Select className={styles['option-select']} defaultValue="0">
-                            <Option value="0">请选择系统</Option>
-                            <Option value="1">Lucy</Option>
-                        </Select>
-                        <Select className={styles['option-select']} defaultValue="0">
-                            <Option value="0">请选择人员</Option>
-                            <Option value="1">Lucy</Option>
-                            <Option value="2">yiminghe</Option>
-                        </Select>
-                        <Button>查询</Button>
+            <div className={`${styles.content} ${styles['home-container']}`}>
+                <Card bordered={false} style={{ flex: 'auto' }}>
+                    <div className={styles.tableList}>
+                        <div className={styles.tableListForm}>
+                            <Form layout="inline">
+                                <Row gutter={48}>
+                                    <Col md={8} sm={24}>
+                                        <FormItem label="选择项目">
+                                            <Select placeholder="请选择" style={{ width: '100%' }}>
+                                                <Option value="0">旭日</Option>
+                                                <Option value="1">信息流</Option>
+                                            </Select>
+                                        </FormItem>
+                                    </Col>
+                                    <Col md={8} sm={24}>
+                                        <FormItem label="选择人员">
+                                            <Select placeholder="请选择" style={{ width: '100%' }}>
+                                                <Option value="0">熊大</Option>
+                                                <Option value="1">赵二</Option>
+                                            </Select>
+                                        </FormItem>
+                                    </Col>
+                                    <Col md={8} sm={24}>
+                                        <span className={styles.submitButtons}>
+                                            <Button type="primary" htmlType="submit">查询</Button>
+                                        </span>
+                                    </Col>
+                                </Row>
+                            </Form>
+                        </div>
+                        <div className={styles.tableListOperator}>
+                            <Button icon="plus" type="primary" >新建系统</Button>
+                        </div>
+                        <Table rowKey="systemName" dataSource={dataSource} columns={columns} />
                     </div>
-                    <div>
-                        <Button className={styles['option-button']}>创建系统</Button>
-                    </div>
-                </div>
-                <Table rowKey="systemName" dataSource={dataSource} columns={columns} />
+                </Card>
             </div>
         );
     }

@@ -48,7 +48,7 @@ class SiderLayout extends Component {
             >
                 <div className={styles['logo']}>
                     <Link to="/">
-                        <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
+                        <img src="/asset/img/koala-logo.png" alt="logo" />
                         <h1>考拉</h1>
                     </Link>
                 </div>

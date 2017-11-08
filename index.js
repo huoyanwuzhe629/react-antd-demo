@@ -11,6 +11,7 @@ import App from './src/App';
 
 // import 'antd/dist/antd.min.css';
 import './asset/style/app.less';
+import 'ant-design-pro/dist/ant-design-pro.min.css';
 
 const history = createHashHistory();
 
